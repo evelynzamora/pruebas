@@ -1,0 +1,20 @@
+------DANIEL ESTUARDO CABRERA MISA-----
+-------------1290-17-11799-------------
+
+SELECT * FROM TBL_CLIENTE
+WHERE ID_CLIENTE  NOT IN 
+(SELECT ID_CLIENTE FROM tbl_renta);
+
+SELECT * FROM tbl_vehiculo
+WHERE id_vehiculo NOT IN
+(SELECT id_vehiculo FROM tbl_FACTURA);
+
+SELECT COUNT(*) FROM TBL_RENTA
+WHERE FECHA_INICIO BETWEEN '01-02-2020' AND '29-02-2020';
+
+SELECT SUM(total_factura) FROM tbl_factura
+WHERE fecha BETWEEN '01-01-2020' AND '31-01-2020';
+
+SELECT COUNT(*) FROM tbl_renta
+WHERE id_renta NOT IN 
+(SELECT ID_RENTA FROM tbl_factura);
